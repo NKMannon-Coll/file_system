@@ -511,6 +511,15 @@ impl<
                     break;
                 }
             }
+            else
+            {
+                if flag
+                {
+                    found_inode = true;
+                    index = i + 1;
+                    break;
+                }
+            }
         }
 
         if found_inode
