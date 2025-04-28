@@ -502,11 +502,14 @@ impl<
                 }
                 count += 1;
             }
-            if flag && array[i][count] == 0
+            if !(count >= MAX_FILENAME_BYTES)
             {
-                found_inode = true;
-                index = i + 1;
-                break;
+                if flag && array[i][count] == 0
+                {
+                    found_inode = true;
+                    index = i + 1;
+                    break;
+                }
             }
         }
 
